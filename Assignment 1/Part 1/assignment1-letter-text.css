@@ -30,3 +30,8 @@ p {
 .remove-italics {
 	font-style: normal;
 }
+
+.indent {
+	margin-left: 2.25em; /*Indents the text*/
+	display: inline-block; /*Makes it work as a block, so it indents following lines, not just the first. Set to inline, as otherwise, it adds an extra character to the line after.*/
+}
