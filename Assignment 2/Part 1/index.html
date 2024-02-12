@@ -108,12 +108,13 @@
 			<h1>Mozilla</h1>
 			<!-- insert <img> element, link to the small
 					version of the Firefox logo -->
-
+			<img src="firefoxlogo120.png">
 		</header>
 
 		<main>
 			<article>
 				<!-- insert iframe from youtube -->
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/ojcNcvb1olg?si=2iWCctHzcLuwRq0v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 				<h2>Rocking the free web</h2>
 
@@ -125,16 +126,33 @@
 			<div class="further-info">
 				<!-- insert images with srcsets and sizes -->
 				<a href="https://www.mozilla.org/en-US/firefox/new/">
-					<img>
+					<img 
+						srcset="./firefoxlogo120.png 120w, ./firefoxlogo400.png 400w"
+						sizes="(max-width: 600px) 120px,
+						400px"
+						src="./firefoxlogo400.png"
+					>
 				</a>
 				<a href="https://www.mozilla.org/">
-					<img>
+					<img 
+						srcset="./mozilladinosaurhead120.png 120w, ./mozilladinosaurhead400.png 400w"
+						sizes="(max-width: 600px) 120px,
+						400px"
+						src="./mozilladinosaurhead400.png"
+					>
 				</a>
 				<a href="https://addons.mozilla.org/">
-					<img>
+					<img 
+						srcset="./firefoxaddons120.jpg 120w, ./firefoxaddons400.jpg 400w"
+						sizes="(max-width: 600px) 120px,
+						400px"
+						src="./firefoxaddons400.jpg"
+					>
 				</a>
 				<a href="https://developer.mozilla.org/en-US/">
-					<img>
+					<img 
+						src="./originals/mdn.svg"
+					>
 				</a>
 				<div class="clearfix"></div>
 			</div>
