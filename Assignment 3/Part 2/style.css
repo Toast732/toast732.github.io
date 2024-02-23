@@ -3,3 +3,10 @@ html {
   }
   
   /* Your CSS below here */
+  .cool-box {
+	width: 200px;
+	height: 50%;
+	background-color: red;
+	text-align: center;
+	padding: 100px 0;
+  }
