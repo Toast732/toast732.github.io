@@ -79,12 +79,7 @@
 	color: #866666;
   }
 
-  a:hover {
-	color: #dd7777;
-	text-decoration: none;
-  }
-
-  a:focus {
+  a:hover, a:focus {
 	color: #dd7777;
 	text-decoration: none;
 	outline: 0px;
