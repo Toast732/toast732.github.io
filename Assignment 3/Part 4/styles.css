@@ -20,6 +20,8 @@ img {
 }
 
 .grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	margin: 0 auto;
 	padding: 0 20px;
 	max-width: 980px;
@@ -47,9 +49,12 @@ nav a {
 }
 
 .photos {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	gap: 1px;
 }
 
 .feature {
