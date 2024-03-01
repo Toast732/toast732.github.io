@@ -75,6 +75,10 @@
 	color: #aa6666;
   }
 
+  a:visited {
+	color: #866666;
+  }
+
   a:hover {
 	color: #dd7777;
 	text-decoration: none;
@@ -84,10 +88,6 @@
 	color: #dd7777;
 	text-decoration: none;
 	outline: 0px;
-  }
-
-  a:visited {
-	color: #866666;
   }
 
   a:active {
