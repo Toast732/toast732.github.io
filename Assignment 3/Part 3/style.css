@@ -80,13 +80,6 @@
 	list-style-type: square;
   }
 
-  nav ul {
-	flex-direction: column;
-	list-style-type: none;
-	display: flex;
-	row-gap: 1.5rem;
-  }
-
   a {
 	color: #aa6666;
   }
@@ -110,6 +103,13 @@
 	background: url("icons8-external-link-52.png") no-repeat 100% 0;
 	background-size: 1rem 1rem;
 	padding-right: 1.2rem;
+  }
+
+  nav ul {
+	flex-direction: column;
+	list-style-type: none;
+	display: flex;
+	row-gap: 1.5rem;
   }
 
   nav a {
