@@ -9,6 +9,7 @@
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
+const ballCountElement = document.querySelector("p");
 
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
@@ -189,6 +190,8 @@ function loop() {
 
 	evilBall.draw();
 	evilBall.collisionDetect();
+
+	ballCountElement.textContent = "Ball Count: " + balls.length;
 
 	requestAnimationFrame(loop);
 }
