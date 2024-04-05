@@ -19,7 +19,7 @@ function random(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// function to generate random color
+// function to generate random colour
 
 function randomRGB() {
 	return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
@@ -35,15 +35,15 @@ class Shape {
 }
 
 class Ball extends Shape {
-	constructor(x, y, velX, velY, color, size) {
+	constructor(x, y, velX, velY, colour, size) {
 		super(x, y, velX, velY);
-		this.color = color;
+		this.colour = colour;
 		this.size = size;
 	}
 
 	draw() {
 		ctx.beginPath();
-		ctx.fillStyle = this.color;
+		ctx.fillStyle = this.colour;
 		ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
 		ctx.fill();
 	}
@@ -77,7 +77,7 @@ class Ball extends Shape {
 				const distance = Math.sqrt(dx * dx + dy * dy);
 			
 				if (distance < this.size + ball.size) {
-					ball.color = this.color = randomRGB();
+					ball.colour = this.colour = randomRGB();
 				}
 			}
 		}
@@ -85,6 +85,78 @@ class Ball extends Shape {
 }
 
 const balls = [];
+
+// User controlled Evil Ball.
+class EvilBall extends Shape {
+	constructor(x, y){
+		// Create the shape for it.
+		super(x, y, 20, 20);
+
+		this.size = 10;
+
+		this.colour = "rgb(255, 255, 255)";
+
+		window.addEventListener("keydown", (e) => {
+			switch (e.key) {
+				case "a":
+					this.x -= this.velX;
+					break;
+				case "d":
+					this.x += this.velX;
+					break;
+				case "w":
+					this.y -= this.velY;
+					break;
+				case "s":
+					this.y += this.velY;
+					break;
+			}
+
+			if ((this.x + this.size) >= width) {
+				this.x = width - this.size;
+			}
+		
+			if ((this.x - this.size) <= 0) {
+				this.x = this.size;
+			}
+		
+			if ((this.y + this.size) >= height) {
+				this.y = height - this.size;
+			}
+		
+			if ((this.y - this.size) <= 0) {
+				this.y = this.size;
+			}
+		});
+	}
+
+	draw() {
+		ctx.beginPath();
+		ctx.strokeStyle = this.colour;
+		ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+		ctx.stroke();
+	}
+
+	collisionDetect() {
+		// Iterate through all of the balls from the top.
+		for(let ball_index = balls.length - 1; ball_index >= 0; ball_index--){
+			// Get the ball
+			const ball = balls[ball_index];
+
+			// get the relative x
+			let rx = ball.x - this.x;
+
+			// get the relative y
+			let ry = ball.y - this.y;
+
+			// If they're within eachother.
+			if (Math.sqrt(rx*rx + ry*ry) <= this.size + ball.size) {
+				// Remove the ball.
+				balls.splice(ball_index, 1)
+			}
+		}
+	}
+}
 
 while (balls.length < 25) {
 	const size = random(10, 20);
@@ -102,6 +174,9 @@ while (balls.length < 25) {
 	balls.push(ball);
 }
 
+// Create the evil ball
+const evilBall = new EvilBall(0, 0);
+
 function loop() {
 	ctx.fillStyle = "rgb(0 0 0 / 25%)";
 	ctx.fillRect(0, 0, width, height);
@@ -111,6 +186,9 @@ function loop() {
 		ball.update();
 		ball.collisionDetect();
 	}
+
+	evilBall.draw();
+	evilBall.collisionDetect();
 
 	requestAnimationFrame(loop);
 }
