@@ -24,16 +24,16 @@ const generateStoryButton = document.querySelector('.randomize');
 const storyOutputField = document.querySelector('.story');
 
 // Store the text for the story.
-const storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day."
+const storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
 
 // Store the options for insertx.
-const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas", "Pootis"]
+const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas", "Pootis"];
 
 // Store the options for inserty.
-const insertY = ["the soup kitchen", "Disneyland", "the White House", "Your house"]
+const insertY = ["the soup kitchen", "Disneyland", "the White House", "Your house"];
 
 // Store the options for insertz.
-const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away", "ate a sandvich"]
+const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away", "ate a sandvich"];
 
 /*
 
@@ -76,7 +76,7 @@ function result() {
 		newStory = newStory.replaceAll("300 pounds", weight);
 
 		// Replace the temperature in the story with the converted temperature.
-		newStory = newStory.replaceAll("94 fahrenheit", temperature)
+		newStory = newStory.replaceAll("94 fahrenheit", temperature);
 	}
 
 	// Get the item to replace insertx with in the story.
