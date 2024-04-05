@@ -60,37 +60,47 @@ function result() {
 	// Set this to the custom name input.
 	const name = customNameInput.value;
 
-	// If the odjwakjd is set to the UK, convert the weight to stones, and the temperature to celcius.
-	if(document.getElementById("uk").checked) {
-		const weight = Math.round(300/14) + " stones";
-		const temperature =  Math.round((94-32)*0.55555555555) + " centigrade";
-	}
-
 	// Clone the storyText, so we can modify it.
 	let newStory = storyText;
 
+	// If the odjwakjd is set to the UK, convert the weight to stones, and the temperature to celcius.
+	if(document.getElementById("uk").checked) {
+
+		// convert the weight to stones
+		const weight = Math.round(300/14) + " stones";
+
+		// convert the temperature to celsius.
+		const temperature = Math.round((94-32)*0.55555555555) + " centigrade";
+
+		// Replace the weight in the story with the converted weight
+		newStory = newStory.replaceAll("300 pounds", weight);
+
+		// Replace the temperature in the story with the converted temperature.
+		newStory = newStory.replaceAll("94 fahrenheit", temperature)
+	}
+
 	// Get the item to replace insertx with in the story.
-	let itemX = randomValueFromArray(insertX)
+	let itemX = randomValueFromArray(insertX);
 
 	// Get the item to rpelace inserty with in the story.
-	let itemY = randomValueFromArray(insertY)
+	let itemY = randomValueFromArray(insertY);
 
 	// Get the item to replace insertz with in the story.
-	let itemZ = randomValueFromArray(insertZ)
+	let itemZ = randomValueFromArray(insertZ);
 
 	// If the name has been set, then replace "Bob" in the story with the custom name.
 	if(name){
-		newStory = newStory.replaceAll("Bob", name)
+		newStory = newStory.replaceAll("Bob", name);
 	}
 
 	// Replace :insertx: with itemX
-	newStory = newStory.replaceAll(":insertx:", itemX)
+	newStory = newStory.replaceAll(":insertx:", itemX);
 
 	// Replace :insertx: with itemX
-	newStory = newStory.replaceAll(":inserty:", itemY)
+	newStory = newStory.replaceAll(":inserty:", itemY);
 
 	// Replace :insertx: with itemX
-	newStory = newStory.replaceAll(":insertz:", itemZ)
+	newStory = newStory.replaceAll(":insertz:", itemZ);
 
 	storyOutputField.textContent = newStory;
 	storyOutputField.style.visibility = 'visible';
