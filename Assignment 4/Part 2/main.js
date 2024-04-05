@@ -1,3 +1,10 @@
+/*
+	Name: Liam Matthews
+	File: main.js
+	Date: 2024 April 4th
+	Working with javascript.
+*/
+
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
