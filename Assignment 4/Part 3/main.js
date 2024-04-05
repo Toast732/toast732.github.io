@@ -1,3 +1,10 @@
+/*
+	Name: Liam Matthews
+	File: main.js
+	Date: 2024 April 5th
+	Working with javascript, creating a pingpong physics simulator.
+*/
+
 // setup canvas
 
 const canvas = document.querySelector("canvas");
