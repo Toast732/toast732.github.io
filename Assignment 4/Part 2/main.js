@@ -114,5 +114,24 @@ btn.addEventListener("click", invertLightnessState)
 
 // The function for inverting the image's lightness state.
 function invertLightnessState(){
-	
+	// If the class name is "dark", set it to light.
+	if(btn.getAttribute("class") == "dark"){
+		// Set it to light.
+		btn.setAttribute("class", "light");
+
+		// Set the textContent to "Lighten".
+		btn.textContent = "Lighten";
+
+		// Set the overlay to 50%
+		overlay.style.backgroundColor = "rgb(0 0 0 / 50%)"
+	} else {
+		// Otherwise, set it to dark.
+		btn.setAttribute("class", "dark");
+
+		// Set the textContent to "Darken".
+		btn.textContent = "Darken";
+
+		// Set the overlay to 0%
+		overlay.style.backgroundColor = "rgb(0 0 0 / 0%)"
+	}
 }
