@@ -25,12 +25,18 @@ function randomRGB() {
 	return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-class Ball {
-	constructor(x, y, velX, velY, color, size) {
+class Shape {
+	constructor(x, y, velX, velY) {
 		this.x = x;
 		this.y = y;
 		this.velX = velX;
 		this.velY = velY;
+	}
+}
+
+class Ball extends Shape {
+	constructor(x, y, velX, velY, color, size) {
+		super(x, y, velX, velY);
 		this.color = color;
 		this.size = size;
 	}
@@ -80,7 +86,7 @@ class Ball {
 
 const balls = [];
 
-while (balls.length < 2) {
+while (balls.length < 25) {
 	const size = random(10, 20);
 	const ball = new Ball(
 		// ball position always drawn at least one ball width
