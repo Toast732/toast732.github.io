@@ -1,3 +1,10 @@
+/*
+	Name: Liam Matthews
+	File: main.js
+	Date: 2024 April 12th
+		Improving Accessiblity for a site.
+*/
+
 // functionality for showing/hiding the comments section
 
 const showHideBtn = document.querySelector('.show-hide');
