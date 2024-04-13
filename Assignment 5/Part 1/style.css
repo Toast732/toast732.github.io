@@ -287,7 +287,7 @@ audio {
 	height: 36px;
 }
 
-button {
+.show-transcript-button button {
 	display: block;
 	float: left;
 	border: 0;
@@ -297,10 +297,10 @@ button {
 	cursor: pointer;
 }
 
-button:hover, button:focus {
+.show-transcript-button button:hover, .show-transcript-button button:focus {
 	background-color: #ddd;
 }
 
-button:active {
+.show-transcript-button button:active {
 	background-color: #ccc;
 }

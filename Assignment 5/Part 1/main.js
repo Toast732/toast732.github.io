@@ -61,11 +61,10 @@ const transcriptBtn = document.querySelector('.transcript-container button');
 
 transcriptBtn.onclick = function() {
   if(transcriptBtn.textContent === 'Show Transcript') {
-    transcript.style.height = '150px';
-	transcript.style.display = 
+    transcript.style.height = '50px';
     transcriptBtn.textContent = 'Hide Transcript';
   } else {
-    transcript.style.height = '0';
+    transcript.style.height = '0px';
     transcriptBtn.textContent = 'Show Transcript';
   }
 };
