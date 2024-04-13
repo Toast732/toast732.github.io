@@ -20,18 +20,18 @@ body {
 
 font[size="7"], font[size="6"], font[size="5"] {
   font-family: 'Sonsie One', cursive;
-  color: #2a2a2a;
+  color: white;
 }
 
 p, input, li, table, label {
   font-family: 'Open Sans Condensed', sans-serif;
-  color: #2a2a2a;
+  color: white;
 }
 
 font[size="7"] {
   font-size: 4rem;
   text-align: center;
-  color: white;
+  color: #1a1a1a;
   text-shadow: 2px 2px 10px black;
 }
 
@@ -46,13 +46,26 @@ font[size="5"] {
 
 p, li, table {
   font-size: 1.6rem;
-  line-height: 1.5;
+  background-color: #007500;
+  border: 2px solid #007000;
+  border-radius: 5px;
+}
+
+li:nth-child(even) {
+	background-color: #006500;
+	border: 2px solid #006000;
 }
 
 /* || header layout */
 
 div[class="nav"], article, footer, .secondary {
-  background-color: green;
+  background-color: #008000;
+}
+
+div[class="nav"], a {
+	color: white;
+	text-align: center;
+	line-height: normal;
 }
 
 article, footer, .secondary {
@@ -81,7 +94,7 @@ div[class="nav"] ul {
 div[class="nav"] li {
   display: inline;
   text-align: center;
-  flex: 1;
+  flex: 2;
 }
 
 div[class="nav"] a {
@@ -89,7 +102,7 @@ div[class="nav"] a {
   font-size: 2rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 div[class="nav"] .search {
@@ -125,6 +138,7 @@ main {
 
 article {
   flex: 5;
+  color: white;
 }
 
 .secondary {
@@ -155,8 +169,12 @@ th[scope="col"] {
   border-bottom: 1px solid black;
 }
 
+tr {
+	background-color: #005500;
+}
+
 tbody tr:nth-child(odd) {
-  background-color: #def;
+  background-color: #004500;
 }
 
 /* styling content images and audio */
@@ -173,7 +191,7 @@ audio {
 /* Comments styling */
 
 .comments {
-  background-color: #def;
+  background-color: #004500;
   padding: 10px;
 }
 
