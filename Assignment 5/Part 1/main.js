@@ -52,3 +52,20 @@ function submitComment() {
   nameField.value = '';
   commentField.value = '';
 }
+
+
+// Code from https://mdn.github.io/learning-area/accessibility/multimedia/audio-transcript-ui/
+
+const transcript = document.querySelector('.transcript');
+const transcriptBtn = document.querySelector('.transcript-container button');
+
+transcriptBtn.onclick = function() {
+  if(transcriptBtn.textContent === 'Show Transcript') {
+    transcript.style.height = '150px';
+	transcript.style.display = 
+    transcriptBtn.textContent = 'Hide Transcript';
+  } else {
+    transcript.style.height = '0';
+    transcriptBtn.textContent = 'Show Transcript';
+  }
+};
