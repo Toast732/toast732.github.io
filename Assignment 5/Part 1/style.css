@@ -217,14 +217,16 @@ audio {
 }
 
 .comment-form label {
-  align-self: center;
+  align-self: right;
   flex: 2;
   text-align: right;
 }
 
 .comment-form input {
-  margin-left: 1rem;
+  margin-left: 0rem;
   flex: 6;
+  color: black;
+  width: 350px;
 }
 
 .show-hide {
