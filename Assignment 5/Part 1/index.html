@@ -11,7 +11,7 @@
     <meta charset="utf-8">
 
     <title>Accessibility assessment</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7CSonsie+One" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="style.css">
 
     <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
@@ -34,8 +34,8 @@
       </ul>
 
       <form class="search">
-		<label hidden for="q">Search Bar</label>
-        <input type="search" name="q" placeholder="Search query">
+		<label hidden for="search-bar">Search Bar</label>
+        <input type="search" name="q" id="search-bar" placeholder="Search query">
         <input type="submit" value="Go!">
       </form>
     </nav>
@@ -57,16 +57,16 @@
           <thead>
             <tr>
               <th scope="col">Bear Type</th>
-              <th scope="col">Coat</td>
-              <th scope="col">Adult size</td>
-              <th scope="col">Habitat</td>
-              <th scope="col">Lifespan</td>
-              <th scope="col">Diet</td>
+              <th scope="col">Coat</th>
+              <th scope="col">Adult size</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Diet</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td scope="row">Wild</td>
+              <th scope="row">Wild</th>
               <td>Brown or black</td>
               <td>1.4 to 2.8 meters</td>
               <td>Woods and forests</td>
@@ -74,7 +74,7 @@
               <td>Fish, meat, plants</td>
             </tr>
             <tr>
-              <td scope="row">Urban</td>
+              <th scope="row">Urban</th>
               <td>North Face</td>
               <td>18 to 22</td>
               <td>Condos and coffee shops</td>
@@ -112,17 +112,18 @@
         </audio>
 		
 		<!-- Transcript -->
+		<h3 style="text-align: center;">Transcript</h3>
 		<div class="transcript-container">
 
 			<div class="transcript-control">
 				<button class="show-transcript-button">Show Transcript</button>
 			</div>
 
-			<section class="transcript" style="height: 0px;">
+			<div class="transcript" style="height: 0px;">
 				<p>
 					This isn't really an audio fact file about bears. But it is, an audio file you can transcribe.
 				</p>
-			</section>
+			</div>
 		</div>
 
         <aside>
@@ -131,7 +132,7 @@
 		
 		<p>Evan Wild is an unemployed plumber from Doncaster, who has been really "in to" wildlife since childhood. He once went to Chester Zoo on holiday, but got ill after eating a doner kebab.</p>
 		
-		<p></p>He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.</p>
+		<p>He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.</p>
 
         </aside>
         <section class="comments">
