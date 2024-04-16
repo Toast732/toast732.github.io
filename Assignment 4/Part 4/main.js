@@ -129,6 +129,40 @@ class EvilBall extends Shape {
 				this.y = this.size;
 			}
 		});
+
+		// Add the ability to use mouse via click (mobile)
+		window.addEventListener("click", (e) => {
+			this.mouseMovement(e);
+		})
+
+		// Add the ability to move via moving the mouse (desktop)
+		window.addEventListener("mousemove", (e) => {
+			this.mouseMovement(e);
+		})
+	}
+
+	// Function for mouse movement.
+	mouseMovement(e){
+		// Set position to new position.
+		this.x = e.pageX;
+		this.y = e.pageY;
+
+		// Don't let them go in the borders.
+		if ((this.x + this.size) >= width) {
+			this.x = width - this.size;
+		}
+	
+		if ((this.x - this.size) <= 0) {
+			this.x = this.size;
+		}
+	
+		if ((this.y + this.size) >= height) {
+			this.y = height - this.size;
+		}
+	
+		if ((this.y - this.size) <= 0) {
+			this.y = this.size;
+		}
 	}
 
 	draw() {
