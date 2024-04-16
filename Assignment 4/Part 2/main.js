@@ -38,8 +38,8 @@ class SelectableImage {
 		this.filePath = filePath;
 		this.altText = altText;
 
-		// Create the image on the document.
-		this.image = document.createElement('img');
+		// Create the input on the document.
+		this.image = document.createElement('input');
 
 		// Set the src attribute.
 		this.image.setAttribute('src', this.filePath);
@@ -50,20 +50,14 @@ class SelectableImage {
 		// Make it able to be keyboard focusable via tab.
 		this.image.setAttribute('tabindex', 0);
 
+		// Set the type to image.
+		this.image.setAttribute('type', 'image');
+
 		// Bind setActive to this, to ensure this is being sent as this (as otherwise, it's something else for some reason).
 		this.setActive = this.setActive.bind(this);
 
 		// Add a click listener, to set this image as active when clicked.
 		this.image.addEventListener('click', this.setActive);
-
-		// Call the setActive function when this element is focused, and Space or Enter is pressed.
-		this.image.addEventListener('keyup', event => {
-			// If the key was Space or Enter.
-			if (event.code === "Space" || event.code === "Enter"){
-				// Set this to be the active image.
-				this.setActive();
-			}
-		});
 	}
 
 	// Call to set this image as the active image.
